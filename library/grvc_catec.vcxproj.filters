@@ -28,6 +28,9 @@
     <Filter Include="Source Files\testbed\control">
       <UniqueIdentifier>{6a095bf8-6a3e-4eb8-91a8-f56c3dadbc71}</UniqueIdentifier>
     </Filter>
+    <Filter Include="make">
+      <UniqueIdentifier>{a220847f-b6de-4587-b953-f272a7ec4e2a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\comm\ClientSocketTCP.cpp">
@@ -53,6 +56,15 @@
     </ClCompile>
     <ClCompile Include="src\core\comm\SocketUDP.cpp">
       <Filter>Source Files\core\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testbed\comm\ViconReceiver.cpp">
+      <Filter>Source Files\testbed\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testbed\control\RosAgent.cpp">
+      <Filter>Source Files\testbed\control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testbed\control\UavCatecRos.cpp">
+      <Filter>Source Files\testbed\control</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,5 +92,19 @@
     <ClInclude Include="src\core\comm\SocketUDP.h">
       <Filter>Source Files\core\comm</Filter>
     </ClInclude>
+    <ClInclude Include="src\testbed\comm\ViconReceiver.h">
+      <Filter>Source Files\testbed\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\testbed\control\RosAgent.h">
+      <Filter>Source Files\testbed\control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\testbed\control\UavCatecRos.h">
+      <Filter>Source Files\testbed\control</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="makefile">
+      <Filter>make</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

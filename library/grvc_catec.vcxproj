@@ -19,6 +19,9 @@
     <ClCompile Include="src\core\comm\Socket.cpp" />
     <ClCompile Include="src\core\comm\SocketTCP.cpp" />
     <ClCompile Include="src\core\comm\SocketUDP.cpp" />
+    <ClCompile Include="src\testbed\comm\ViconReceiver.cpp" />
+    <ClCompile Include="src\testbed\control\RosAgent.cpp" />
+    <ClCompile Include="src\testbed\control\UavCatecRos.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\comm\ClientSocketTCP.h" />
@@ -29,6 +32,9 @@
     <ClInclude Include="src\core\comm\Socket.h" />
     <ClInclude Include="src\core\comm\SocketTCP.h" />
     <ClInclude Include="src\core\comm\SocketUDP.h" />
+    <ClInclude Include="src\testbed\comm\ViconReceiver.h" />
+    <ClInclude Include="src\testbed\control\RosAgent.h" />
+    <ClInclude Include="src\testbed\control\UavCatecRos.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2558AA9B-A3B6-4CD3-92C1-F7A8F0DFC1BC}</ProjectGuid>
