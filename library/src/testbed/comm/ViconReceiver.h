@@ -9,7 +9,7 @@
 
 #ifndef PARTICLE_FILTER_INPUT_VICON_CLIENT_H_
 #define PARTICLE_FILTER_INPUT_VICON_CLIENT_H_
-#include <core/comm/Socket.h>
+#include "../../core/comm/Socket.h"
 
 #include <cstdint>
 #include <map>
