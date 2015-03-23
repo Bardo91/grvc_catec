@@ -16,6 +16,8 @@ OBJ_FILES = $(patsubst %.cpp, %.o, $(CPP_FILES))
 
 CXX_FLAGS = -fPIC -std=c++11 -O3 -Wall -Werr
 
+DEFINITIONS = -DINCLUDE_ROS_LIBRARY
+
 OUTPUT_DIR := bin
 ########## EXTERNAL INCLUDES ##########
 INCLUDES :=
@@ -57,7 +59,7 @@ shared_lib: $(OBJ_FILES) $(OUTPUT_DIR)
 	@echo "Searching for objects-----------------"
 	@echo $(OBJ_FILES)
 	@echo "Prepare compilation-------------------"
-	$(CXX) -shared -o $(OUTPUT_DIR)/$(PRJ_NAME).so $(OBJ_FILES) $(CXX_FLAGS)
+	$(CXX) -shared -o $(OUTPUT_DIR)/$(PRJ_NAME).so $(OBJ_FILES) $(CXX_FLAGS) $(DEFINITIONS)
 	@echo "Generated shared library -------------"
 
 
