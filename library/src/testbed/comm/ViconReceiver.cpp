@@ -37,7 +37,6 @@ ViconReceiver::ViconReceiver(std::string _port, unsigned _numTargets): mNumTarge
 
 //---------------------------------------------------------------------------------------------------------------------
 ViconReceiver::~ViconReceiver(){
-	delete mServer;
 	mListening = false;
 	while (mListenThread->joinable()){ }
 	delete mListenThread;
