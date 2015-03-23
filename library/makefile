@@ -11,10 +11,10 @@ PRJ_NAME = libgrvc
 
 AR = ar
 CXX = g++
-CPP_FILES := $(shell find ./source/ -name '*.cpp')
+CPP_FILES := $(shell find ./src -name '*.cpp')
 OBJ_FILES = $(patsubst %.cpp, %.o, $(CPP_FILES))
 
-CXX_FLAGS = -fPIC -std=c++11 -O3 -Wall -Werr
+CXX_FLAGS = -fPIC -std=c++11 -O3 -Wall -Werror
 
 DEFINITIONS = -DINCLUDE_ROS_LIBRARY
 
@@ -26,9 +26,9 @@ DEPENDENCIES :=
 
 ########## RULES ##########
 
-all: BOViL
+all: rebuild
 
-rebuild: clean BOViL
+rebuild: clean shared_lib
 	
 # Remove preious files
 clean:
@@ -37,7 +37,7 @@ clean:
 	rm -f $(OBJ_FILES)
 	@echo "Project Cleaned-----------------------"
 
-$(OUTPUT_DIR)
+$(OUTPUT_DIR):
 	mkdir -p $(OUTPUT_DIR)
 	
 # Compile static library
