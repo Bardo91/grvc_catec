@@ -16,7 +16,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -38,7 +38,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>build\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -64,6 +67,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\core\comm\ClientSocketTCP.cpp" />
+    <ClCompile Include="src\core\comm\ClientSocketUDP.cpp" />
+    <ClCompile Include="src\core\comm\ServerMultiThreadTCP.cpp" />
+    <ClCompile Include="src\core\comm\ServerSocketTCP.cpp" />
+    <ClCompile Include="src\core\comm\ServerSocketUDP.cpp" />
+    <ClCompile Include="src\core\comm\Socket.cpp" />
+    <ClCompile Include="src\core\comm\SocketTCP.cpp" />
+    <ClCompile Include="src\core\comm\SocketUDP.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\core\comm\ClientSocketTCP.h" />
+    <ClInclude Include="src\core\comm\ClientSocketUDP.h" />
+    <ClInclude Include="src\core\comm\ServerMultiThreadTCP.h" />
+    <ClInclude Include="src\core\comm\ServerSocketTCP.h" />
+    <ClInclude Include="src\core\comm\ServerSocketUDP.h" />
+    <ClInclude Include="src\core\comm\Socket.h" />
+    <ClInclude Include="src\core\comm\SocketTCP.h" />
+    <ClInclude Include="src\core\comm\SocketUDP.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
