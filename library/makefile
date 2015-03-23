@@ -16,13 +16,20 @@ OBJ_FILES = $(patsubst %.cpp, %.o, $(CPP_FILES))
 
 CXX_FLAGS = -fPIC -std=c++11 -O3 -Wall -Werror
 
-DEFINITIONS = -DINCLUDE_ROS_LIBRARY
-
 OUTPUT_DIR := bin
+
+########## ROS DEPENDENCIES ##########
+DEFINITIONS 		:= -DINCLUDE_ROS_LIBRARY
+ROS_INCLUDES 		:= -I/opt/ros/indigo/include \
+				-I./../external_libs/rosCatec/include
+ROS_LIBRARIES 		:= -L/opt/ros/indigo/lib
+ROS_DEPENDENCIES 	:= -lroscpp
+
+
 ########## EXTERNAL INCLUDES ##########
-INCLUDES :=
-LIBRARIES := 
-DEPENDENCIES :=
+INCLUDES 	:=  $(ROS_INCLUDES)
+LIBRARIES 	:= $(ROS_LIBRARIES)
+DEPENDENCIES 	:=	$(ROS_DEPENDENCIES)
 
 ########## RULES ##########
 
