@@ -36,6 +36,11 @@
     <ClInclude Include="src\testbed\control\RosAgent.h" />
     <ClInclude Include="src\testbed\control\UavCatecRos.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="makefile">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2558AA9B-A3B6-4CD3-92C1-F7A8F0DFC1BC}</ProjectGuid>
     <RootNamespace>grvc_catec</RootNamespace>

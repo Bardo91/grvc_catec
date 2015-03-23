@@ -103,8 +103,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="makefile">
+    <Text Include="makefile">
       <Filter>make</Filter>
-    </ResourceCompile>
+    </Text>
   </ItemGroup>
 </Project>
