@@ -59,7 +59,7 @@ shared_lib: $(OBJ_FILES) $(OUTPUT_DIR)
 	@echo "Searching for objects-----------------"
 	@echo $(OBJ_FILES)
 	@echo "Prepare compilation-------------------"
-	$(CXX) -shared -o $(OUTPUT_DIR)/$(PRJ_NAME).so $(OBJ_FILES) $(CXX_FLAGS) $(DEFINITIONS)
+	$(CXX) -shared -o $(OUTPUT_DIR)/$(PRJ_NAME).so $(OBJ_FILES) $(CXX_FLAGS)
 	@echo "Generated shared library -------------"
 
 
@@ -68,7 +68,7 @@ shared_lib: $(OBJ_FILES) $(OUTPUT_DIR)
 %.o: %.cpp
 	@echo "--------------------------------------"
 	@echo "Linking " $^ " to " $@
-	$(CXX) -c $^ -o $@ $(INCLUDES) $(LIBRARIES) $(DEPENDENCIES) $(CXX_FLAGS)
+	$(CXX) -c $^ -o $@ $(INCLUDES) $(LIBRARIES) $(DEPENDENCIES) $(CXX_FLAGS) $(DEFINITIONS)
 
 
 ########## PHONY ##########
