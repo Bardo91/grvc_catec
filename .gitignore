@@ -1,9 +1,16 @@
-*o
+# Ignorable files
+*obj
 *~
-*lib
 
+# Build folders
+*bin
+*build
+
+# Visual Studio file types
 *.sdf
 
 *.suo
 
 *.user
+
+*.opensdf
