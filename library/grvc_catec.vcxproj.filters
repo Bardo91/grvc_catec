@@ -19,6 +19,15 @@
     <Filter Include="Source Files\core\comm">
       <UniqueIdentifier>{4309a9b2-35f4-4069-ae8e-c015091c225e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\testbed">
+      <UniqueIdentifier>{c370ef4b-06a0-44de-b231-62d9ee1bd87e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\testbed\comm">
+      <UniqueIdentifier>{3a97326e-aa86-404e-badf-619628a04fb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\testbed\control">
+      <UniqueIdentifier>{6a095bf8-6a3e-4eb8-91a8-f56c3dadbc71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\comm\ClientSocketTCP.cpp">
