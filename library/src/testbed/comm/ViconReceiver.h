@@ -16,6 +16,7 @@
 #include <mutex>
 #include <string>
 #include <thread>
+#include <vector>
 
 struct TState {
 	uint32_t uiIdInterface;
@@ -42,6 +43,9 @@ class ViconReceiver{
 public:		// Public interface.
 	ViconReceiver	(std::string _port);
 	~ViconReceiver	();
+
+	TviconProxy operator[](std::string _key);
+	std::vector<std::string> keys();
 
 private:	// Private methods.
 	void listenCallback();

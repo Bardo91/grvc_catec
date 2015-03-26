@@ -43,6 +43,22 @@ ViconReceiver::~ViconReceiver(){
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+TviconProxy ViconReceiver::operator[](std::string _key){
+	return mTargetDictionary[_key];
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+std::vector<std::string> ViconReceiver::keys(){
+	std::vector<std::string> keys;
+
+	for (pair<std::string, TviconProxy> targetData : mTargetDictionary){
+		keys.push_back(targetData.first);
+	}
+
+	return keys;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void ViconReceiver::listenCallback(){
 	std::string msg;
 	while (mListening){
