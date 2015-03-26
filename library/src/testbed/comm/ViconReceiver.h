@@ -40,7 +40,7 @@ struct DataPacket{
 
 class ViconReceiver{
 public:		// Public interface.
-	ViconReceiver	(std::string _port, unsigned _numTargets);
+	ViconReceiver	(std::string _port);
 	~ViconReceiver	();
 
 private:	// Private methods.

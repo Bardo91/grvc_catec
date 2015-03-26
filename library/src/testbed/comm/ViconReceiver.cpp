@@ -30,7 +30,7 @@ DataPacket::~DataPacket(){
 
 //---------------------------------------------------------------------------------------------------------------------
 // Class definitions
-ViconReceiver::ViconReceiver(std::string _port, unsigned _numTargets): mNumTargets(_numTargets){
+ViconReceiver::ViconReceiver(std::string _port){
 	mServer = Socket::createSocket(BOViL::comm::eSocketType::serverUDP, _port);
 	mListenThread = new thread(&ViconReceiver::listenCallback, this);
 }
@@ -48,6 +48,7 @@ void ViconReceiver::listenCallback(){
 	while (mListening){
 		if (mServer->receiveMsg(msg)){
 			DataPacket packet(msg);
+			mNumTargets = packet.numObjects;
 
 			for (unsigned i = 0; i < mNumTargets; i++){				
 				mTargetDictionary[string(packet.viconData[i].name)] = packet.viconData[i];
