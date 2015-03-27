@@ -19,7 +19,8 @@ CXX_FLAGS = -fPIC -std=c++11 -O3 -Wall -Werror
 OUTPUT_DIR := bin
 
 ########## ROS DEPENDENCIES ##########
-DEFINITIONS 		:= -DINCLUDE_ROS_LIBRARY
+#DEFINITIONS 		:= -DINCLUDE_ROS_LIBRARY
+DEFINITIONS			:=
 ROS_INCLUDES 		:= -I/opt/ros/indigo/include \
 				-I./../external_libs/rosCatec/include
 ROS_LIBRARIES 		:= -L/opt/ros/indigo/lib
