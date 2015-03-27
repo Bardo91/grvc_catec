@@ -17,3 +17,4 @@
 *.opensdf
 *.log
 *Release
+*Debug
