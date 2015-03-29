@@ -29,7 +29,8 @@
 
 class UavCatecROS: public ros_catec::RosAgent {
 public:
-	UavCatecROS(std::string _uavId);
+	UavCatecROS		(std::string _uavId);
+	UavCatecROS		(UavCatecROS &&_uav);
 
 	// Actions
 	void move(catec_msgs::ControlReferenceRwStamped _reference);
@@ -42,6 +43,8 @@ public:
 
 	bool hasTakeOff(){	return mHasTakeOff; };
 private:
+	UavCatecROS		(const UavCatecROS &_uav) { };		// Cant be copied currently.
+
 	typedef actionlib::SimpleActionClient<catec_actions_msgs::TakeOffAction> TakeOffClient;
 	typedef actionlib::SimpleActionClient<catec_actions_msgs::LandAction> LandClient;
 

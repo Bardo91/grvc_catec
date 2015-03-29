@@ -45,6 +45,12 @@ UavCatecROS::UavCatecROS(string _uavId): RosAgent(_uavId) ,mHasTakeOff(false){
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+UavCatecROS::UavCatecROS(UavCatecROS &&_uav){
+	_uav.mLandAction	= mLandAction;
+	_uav.mTakeOffAction = mTakeOffAction;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void UavCatecROS::move(ControlReferenceRwStamped _reference){
 	mReference = _reference;
 	mCommander.publish(_reference);
@@ -70,7 +76,6 @@ void UavCatecROS::land(){
 	mLandAction->waitForResult();
 	mHasTakeOff = false;
 }
-
 
 //---------------------------------------------------------------------------------------------------------------------
 // Unimplemented actions

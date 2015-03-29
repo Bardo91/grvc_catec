@@ -22,12 +22,15 @@ namespace ros_catec{
 	class RosAgent{
 	public:		// Public interface.
 		RosAgent			(std::string _uavName);
+		RosAgent			(RosAgent &&_agent);
+
 		virtual ~RosAgent	();
 
 		void position		(double * _position) volatile;
 		void orientation	(double * _orientation) volatile;
 
 	private:	// Private methods.
+		RosAgent			(const RosAgent &_agent) { };	// Class cant be copied currently.
 		virtual void stateCallback	(const catec_msgs::UALStateStamped::ConstPtr& s);
 
 	private:	// Private members.
