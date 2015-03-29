@@ -46,8 +46,11 @@ UavCatecROS::UavCatecROS(string _uavId): RosAgent(_uavId) ,mHasTakeOff(false){
 
 //---------------------------------------------------------------------------------------------------------------------
 UavCatecROS::UavCatecROS(UavCatecROS &&_uav){
-	_uav.mLandAction	= mLandAction;
-	_uav.mTakeOffAction = mTakeOffAction;
+	mLandAction			=	_uav.mLandAction;
+	mTakeOffAction		=	_uav.mTakeOffAction;
+
+	_uav.mLandAction	= nullptr;
+	_uav.mTakeOffAction	= nullptr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

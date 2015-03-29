@@ -27,11 +27,11 @@ namespace ros_catec{
 
 	//-----------------------------------------------------------------------------------------------------------------
 	RosAgent::RosAgent(RosAgent &&_agent){
-		_agent.mPosition	= mPosition;
-		_agent.mOrientation = mOrientation;
+		mPosition			= _agent.mPosition;
+		mOrientation		= _agent.mOrientation;
 
-		mPosition			= nullptr;
-		mOrientation		= nullptr;
+		_agent.mPosition	= nullptr;
+		_agent.mOrientation	= nullptr;
 	}
 
 	//-----------------------------------------------------------------------------------------------------------------
