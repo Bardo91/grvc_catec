@@ -22,6 +22,7 @@
     <ClCompile Include="src\testbed\comm\ViconReceiver.cpp" />
     <ClCompile Include="src\testbed\control\RosAgent.cpp" />
     <ClCompile Include="src\testbed\control\UavCatecRos.cpp" />
+    <ClCompile Include="src\testbed\control\UgvCatecRos.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\comm\ClientSocketTCP.h" />
@@ -35,6 +36,7 @@
     <ClInclude Include="src\testbed\comm\ViconReceiver.h" />
     <ClInclude Include="src\testbed\control\RosAgent.h" />
     <ClInclude Include="src\testbed\control\UavCatecRos.h" />
+    <ClInclude Include="src\testbed\control\UgvCatecRos.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="makefile">

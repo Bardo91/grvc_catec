@@ -66,6 +66,9 @@
     <ClCompile Include="src\testbed\control\UavCatecRos.cpp">
       <Filter>Source Files\testbed\control</Filter>
     </ClCompile>
+    <ClCompile Include="src\testbed\control\UgvCatecRos.cpp">
+      <Filter>Source Files\testbed\control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\comm\ClientSocketTCP.h">
@@ -99,6 +102,9 @@
       <Filter>Source Files\testbed\control</Filter>
     </ClInclude>
     <ClInclude Include="src\testbed\control\UavCatecRos.h">
+      <Filter>Source Files\testbed\control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\testbed\control\UgvCatecRos.h">
       <Filter>Source Files\testbed\control</Filter>
     </ClInclude>
   </ItemGroup>
