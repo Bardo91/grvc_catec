@@ -12,7 +12,7 @@
 
 namespace ros_catec{
 	//---------------------------------------------------------------------------------------------------------------------
-	UgvCatecRos::UgvCatecRos(std::string _ugvId){
+	UgvCatecRos::UgvCatecRos(std::string _ugvId): RosAgent(_ugvId){
 		ros::NodeHandle n;
 
 		std::string topicname = _ugvId;

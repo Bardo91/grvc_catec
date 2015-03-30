@@ -26,19 +26,10 @@ namespace ros_catec{
 	}
 
 	//-----------------------------------------------------------------------------------------------------------------
-	RosAgent::RosAgent(RosAgent &&_agent){
-		mPosition			= _agent.mPosition;
-		mOrientation		= _agent.mOrientation;
-
-		_agent.mPosition	= nullptr;
-		_agent.mOrientation	= nullptr;
-	}
-
-	//-----------------------------------------------------------------------------------------------------------------
 	RosAgent::~RosAgent(){
-		if(mPosition != nullptr)
+		if(mPosition != NULL)
 			delete[] mPosition;
-		if(mOrientation != nullptr)
+		if(mOrientation != NULL)
 			delete[] mOrientation;
 	}
 

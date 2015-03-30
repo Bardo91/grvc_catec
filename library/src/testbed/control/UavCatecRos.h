@@ -12,7 +12,7 @@
 #define UAV_CATEC_ROS_H_H
 
 // CATEC includes
-#include "core/agents/RosAgent.h"
+#include "RosAgent.h"
 
 #include <ros/ros.h>
 
@@ -26,40 +26,37 @@
 
 // CPP includes
 #include <string>
+namespace ros_catec{
+	class UavCatecROS: public ros_catec::RosAgent {
+	public:
+		UavCatecROS		(std::string _uavId);
 
-class UavCatecROS: public ros_catec::RosAgent {
-public:
-	UavCatecROS		(std::string _uavId);
-	UavCatecROS		(UavCatecROS &&_uav);
+		// Actions
+		void move(catec_msgs::ControlReferenceRwStamped _reference);
 
-	// Actions
-	void move(catec_msgs::ControlReferenceRwStamped _reference);
+		void takeOff();
+		void land();
 
-	void takeOff();
-	void land();
+		// Getters
+		catec_msgs::ControlReferenceRwStamped	reference() { return mReference; };
 
-	// Getters
-	catec_msgs::ControlReferenceRwStamped	reference() { return mReference; };
-
-	bool hasTakeOff(){	return mHasTakeOff; };
-private:
-	UavCatecROS		(const UavCatecROS &_uav) { };		// Cant be copied currently.
-
-	typedef actionlib::SimpleActionClient<catec_actions_msgs::TakeOffAction> TakeOffClient;
-	typedef actionlib::SimpleActionClient<catec_actions_msgs::LandAction> LandClient;
+		bool hasTakeOff(){	return mHasTakeOff; };
+	private:
+		typedef actionlib::SimpleActionClient<catec_actions_msgs::TakeOffAction> TakeOffClient;
+		typedef actionlib::SimpleActionClient<catec_actions_msgs::LandAction> LandClient;
 
 
-private:	// Private Members
-	bool mHasTakeOff;
-	catec_msgs::ControlReferenceRwStamped mReference;
+	private:	// Private Members
+		bool mHasTakeOff;
+		catec_msgs::ControlReferenceRwStamped mReference;
 
-	ros::Publisher	mCommander;
+		ros::Publisher	mCommander;
 
-	TakeOffClient*	mTakeOffAction;
-	LandClient*		mLandAction;
+		TakeOffClient	mTakeOffAction;
+		LandClient		mLandAction;
 
-};
-
+	};
+}	//	namespace catec_ros
 #endif // !UAV_CATEC_ROS_H_H
 
 #endif	// INCLUDE_ROS_LIBRARY
