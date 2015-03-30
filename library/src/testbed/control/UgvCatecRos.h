@@ -12,27 +12,27 @@
 #define GRVC_CATEC_TESTBED_CONTROL_UGV_CATEC_ROS_H_
 
 #include "RosAgent.h"
-
 #include "ros/ros.h"
 
-class UgvCatecRos: public RosAgent{
-public:
-	UgvCatecRos		(std::string _ugvId);
+namespace ros_catec{
+	class UgvCatecRos: public RosAgent{
+	public:
+		UgvCatecRos		(std::string _ugvId);
 
-	// Actions
-	void move(catec_msgs::ControlReferenceRwStamped _reference);
+		// Actions
+		void move(catec_msgs::ControlReferenceRwStamped _reference);
 
-	// Getters
-	catec_msgs::ControlReferenceRwStamped	reference() { return mReference; };
-private:
+		// Getters
+		catec_msgs::ControlReferenceRwStamped	reference() { return mReference; };
+	private:
 
-private:	// Private Members
-	catec_msgs::ControlReferenceRwStamped mReference;
+	private:	// Private Members
+		catec_msgs::ControlReferenceRwStamped mReference;
 
-	ros::Publisher	mCommander;
-};
+		ros::Publisher	mCommander;
+	};
+}	// namespace ros_catec
 
 
 #endif	//	GRVC_CATEC_TESTBED_CONTROL_UGV_CATEC_ROS_H_
-
 #endif	//	INCLUDE_ROS_LIBRARY

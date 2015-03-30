@@ -10,22 +10,24 @@
 
 #include "UgvCatecRos.h"
 
-//---------------------------------------------------------------------------------------------------------------------
-UgvCatecRos::UgvCatecRos(std::string _ugvId){
-	ros::NodeHandle n;
+namespace ros_catec{
+	//---------------------------------------------------------------------------------------------------------------------
+	UgvCatecRos::UgvCatecRos(std::string _ugvId){
+		ros::NodeHandle n;
 
-	string topicname = _ugvId;
-	topicname.append("/control_references_rw");
-	mCommander = n.advertise<ControlReferenceRwStamped>(topicname.c_str(), 0);
-}
+		std::string topicname = _ugvId;
+		topicname.append("/control_references_rw");
+		mCommander = n.advertise<catec_msgs::ControlReferenceRwStamped>(topicname.c_str(), 0);
+	}
 
-//---------------------------------------------------------------------------------------------------------------------
-void UavCatecROS::move(ControlReferenceRwStamped _reference){
-	mReference = _reference;
-	mCommander.publish(_reference);
-}
+	//---------------------------------------------------------------------------------------------------------------------
+	void UgvCatecRos::move(catec_msgs::ControlReferenceRwStamped _reference){
+		mReference = _reference;
+		mCommander.publish(_reference);
+	}
 
-//---------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------
 
-
+}	// namespace ros_catec
 #endif	//	 INCLUDE_ROS_LIBRARY
+
