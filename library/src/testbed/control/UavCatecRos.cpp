@@ -27,7 +27,7 @@ namespace ros_catec{
 	//---------------------------------------------------------------------------------------------------------------------
 	UavCatecROS::UavCatecROS(string _uavId): 	RosAgent(_uavId),
 												mHasTakeOff(false),
-												mTakeOffAction(_uavId + "/take_off_Action", true),
+												mTakeOffAction(_uavId + "/take_off_action", true),
 												mLandAction(_uavId+"/land_action",true){
 		ros::NodeHandle n;
 
