@@ -19,7 +19,7 @@ namespace ros_catec{
 		mOrientation 	= new double[3];
 
 		ros::NodeHandle nodeHandle;
-
+		mAgentId = _uavName;
 		string stateTopic = _uavName;
 		stateTopic.append("/ual_state");
 		mStateSubscriber = nodeHandle.subscribe(stateTopic.c_str(), 0, &RosAgent::stateCallback, this);

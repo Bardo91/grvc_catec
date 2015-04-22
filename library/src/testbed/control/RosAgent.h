@@ -25,8 +25,9 @@ namespace ros_catec{
 
 		virtual ~RosAgent	();
 
-		void position		(double * _position) volatile;
-		void orientation	(double * _orientation) volatile;
+		std::string	id		(){return mAgentId;};
+		void 		position	(double * _position) volatile;
+		void 		orientation	(double * _orientation) volatile;
 
 	private:	// Private methods.
 		virtual void stateCallback	(const catec_msgs::UALStateStamped::ConstPtr& s);
