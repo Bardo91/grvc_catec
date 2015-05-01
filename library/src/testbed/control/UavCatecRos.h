@@ -6,8 +6,6 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifdef INCLUDE_ROS_LIBRARY
-
 #ifndef UAV_CATEC_ROS_H_H
 #define UAV_CATEC_ROS_H_H
 
@@ -58,5 +56,3 @@ namespace ros_catec{
 	};
 }	//	namespace catec_ros
 #endif // !UAV_CATEC_ROS_H_H
-
-#endif	// INCLUDE_ROS_LIBRARY

@@ -6,8 +6,6 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifdef INCLUDE_ROS_LIBRARY
-
 #ifndef GRVC_CATEC_TESTBED_CONTROL_UGV_CATEC_ROS_H_
 #define GRVC_CATEC_TESTBED_CONTROL_UGV_CATEC_ROS_H_
 
@@ -35,4 +33,3 @@ namespace ros_catec{
 
 
 #endif	//	GRVC_CATEC_TESTBED_CONTROL_UGV_CATEC_ROS_H_
-#endif	//	INCLUDE_ROS_LIBRARY

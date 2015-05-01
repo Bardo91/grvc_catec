@@ -6,8 +6,6 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifdef INCLUDE_ROS_LIBRARY
-
 #include "UavCatecRos.h"
 #include <iostream>
 
@@ -92,5 +90,3 @@ void land_Feedback_CB(const LandFeedbackConstPtr& feedback){
 void land_Done_CB(const actionlib::SimpleClientGoalState& state, const LandResultConstPtr& result){
 
 }
-
-#endif	// INCLUDE_ROS_LIBRARY
